@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<library path="mecanum_jacobian">
+  <class name="mecanum_jacobian/JacobianController" type="mecanum_jacobian::JacobianController" base_class_type="controller_interface::ChainableControllerInterface">
+    <description>
+      A chainable controller for mecanum wheel robots that reads joint velocities,
+      computes body frame velocities using Jacobian transformation, exports them 
+      as state interfaces, and publishes TF transform from odom to base_link.
+    </description>
+  </class>
+  <class name="mecanum_jacobian/InverseJacobianController" type="mecanum_jacobian::InverseJacobianController" base_class_type="controller_interface::ChainableControllerInterface">
+    <description>
+      A chainable controller for mecanum wheel robots that takes body frame velocity
+      commands (from topic or chained interface) and converts them to wheel velocities
+      using inverse Jacobian transformation.
+    </description>
+  </class>
+</library>
