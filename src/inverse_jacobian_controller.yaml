@@ -1,0 +1,17 @@
+inverse_jacobian_controller:
+  joints: {
+    type: string_array,
+    description: "Names of the 4 mecanum wheel joints in order: [front_left, front_right, rear_left, rear_right]",
+    validation: {
+      not_empty<>: [],
+      size_lt<>: [5],
+      size_gt<>: [3]
+    },
+    read_only: true
+  }
+  velocity_command_topic: {
+    type: string,
+    default_value: "/cmd_vel",
+    description: "Topic name for velocity commands (geometry_msgs/Twist)",
+    read_only: true
+  }
