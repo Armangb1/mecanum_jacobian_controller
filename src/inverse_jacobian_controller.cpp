@@ -227,23 +227,23 @@ void InverseJacobianController::initializeInverseJacobianMatrix()
   double angular_coeff = -(HALF_WIDTH + HALF_LENGTH);
   
   // Row 0: Front left wheel
-  inverse_jacobian_matrix_[0][0] = inv_radius * -1.0;  // x coefficient
-  inverse_jacobian_matrix_[0][1] = inv_radius * -1.0;   // y coefficient
+  inverse_jacobian_matrix_[0][0] = inv_radius * 1.0;  // x coefficient
+  inverse_jacobian_matrix_[0][1] = inv_radius * 1.0;   // y coefficient
   inverse_jacobian_matrix_[0][2] = inv_radius * angular_coeff; // phi coefficient
   
   // Row 1: Front right wheel
-  inverse_jacobian_matrix_[1][0] = inv_radius * 1.0;   // x coefficient
-  inverse_jacobian_matrix_[1][1] = inv_radius * -1.0;   // y coefficient
+  inverse_jacobian_matrix_[1][0] = inv_radius * -1.0;   // x coefficient
+  inverse_jacobian_matrix_[1][1] = inv_radius * 1.0;   // y coefficient
   inverse_jacobian_matrix_[1][2] = inv_radius * angular_coeff; // phi coefficient
   
   // Row 2: Rear left wheel
-  inverse_jacobian_matrix_[2][0] = inv_radius * 1.0;   // x coefficient
-  inverse_jacobian_matrix_[2][1] = inv_radius * 1.0;  // y coefficient
+  inverse_jacobian_matrix_[2][0] = inv_radius * -1.0;   // x coefficient
+  inverse_jacobian_matrix_[2][1] = inv_radius * -1.0;  // y coefficient
   inverse_jacobian_matrix_[2][2] = inv_radius * angular_coeff; // phi coefficient
   
   // Row 3: Rear right wheel
-  inverse_jacobian_matrix_[3][0] = inv_radius * -1.0;  // x coefficient
-  inverse_jacobian_matrix_[3][1] = inv_radius * 1.0;  // y coefficient
+  inverse_jacobian_matrix_[3][0] = inv_radius * 1.0;  // x coefficient
+  inverse_jacobian_matrix_[3][1] = inv_radius * -1.0;  // y coefficient
   inverse_jacobian_matrix_[3][2] = inv_radius * angular_coeff; // phi coefficient
   
   RCLCPP_INFO(
