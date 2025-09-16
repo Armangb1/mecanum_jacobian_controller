@@ -210,16 +210,17 @@ void JacobianController::initializeJacobianMatrix()
   // Jp = [-1, -1, 1, 1; 1, -1, -1, 1; 1/(b+a), 1/(b+a), 1/(b+a), 1/(b+a)]
   
   // Row 0: X velocity coefficients
-  jacobian_matrix_[0][0] = -1.0;
+  jacobian_matrix_[0][0] = 1.0;
   jacobian_matrix_[0][1] = -1.0;
-  jacobian_matrix_[0][2] = 1.0;
+  jacobian_matrix_[0][2] = -1.0;
   jacobian_matrix_[0][3] = 1.0;
+  
   
   // Row 1: Y velocity coefficients  
   jacobian_matrix_[1][0] = 1.0;
-  jacobian_matrix_[1][1] = -1.0;
+  jacobian_matrix_[1][1] = 1.0;
   jacobian_matrix_[1][2] = -1.0;
-  jacobian_matrix_[1][3] = 1.0;
+  jacobian_matrix_[1][3] = -1.0;
   
   // Row 2: Angular velocity coefficients
   double angular_coeff = 1.0 / (HALF_WIDTH + HALF_LENGTH);
