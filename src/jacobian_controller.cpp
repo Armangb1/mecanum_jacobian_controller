@@ -23,7 +23,6 @@
 namespace mecanum_jacobian
 {
 
-  //==================================================OK======================================================
 controller_interface::CallbackReturn JacobianController::on_init()
 {
   try
@@ -142,7 +141,6 @@ bool JacobianController::on_set_chained_mode(bool chained_mode)
   
   return true;
 }
-// ===================================================================================
 
 controller_interface::return_type JacobianController::update_and_write_commands(
   const rclcpp::Time & time, const rclcpp::Duration & period)
@@ -174,7 +172,6 @@ JacobianController::on_export_reference_interfaces()
   return reference_interfaces;
 }
 
-// =======================================================================ok==============================
 // NOTE: the states are body velocities
 std::vector<hardware_interface::StateInterface>
 JacobianController::on_export_state_interfaces()
@@ -235,7 +232,6 @@ void JacobianController::initializeJacobianMatrix()
     HALF_LENGTH, HALF_WIDTH, WHEEL_RADIUS);
 }
 
-// =============================================================================================================================
 void JacobianController::computeBodyVelocities(const std::vector<double>& joint_velocities)
 {
   if (joint_velocities.size() != 4)
